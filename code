@@ -1,0 +1,53 @@
+#include<stdio.h>
+void avg(int);
+int main()
+{
+   int t,i,n,c;
+
+   scanf("%d",&t);
+   for(i=0;i<t;i++)
+   {
+       scanf("%d",&n);
+       if(n>=4)
+       {avg(n);}
+       else
+       {
+           for(c=1;c<=n;c++)
+           {
+               printf("%d ",c);
+           }
+       }
+   }
+}
+void avg(int n)
+{
+    int k=0,m=1, arr[n],j,crd[n],y;
+    while(k<n)
+    {
+        arr[k] = m;
+        m++;
+        k++;
+
+    }
+
+    crd[0] = arr[n-1];
+    crd[n-1] = arr[n-2];
+    crd[1] = arr[n-3];
+    crd[n-2] = arr[n-4];
+    printf("\n%d %d ",crd[0],crd[1]);
+    if(n>=5){
+    y=0;
+    for(k=2;k<n-2;k++)
+    {
+        crd[k] = arr[y];
+        printf("%d ",crd[k]);
+        y++;
+    }
+    }
+    printf("%d %d ",crd[n-2],crd[n-1]);
+   printf("\n");
+
+
+
+}
+
